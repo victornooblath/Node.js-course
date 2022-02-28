@@ -12,8 +12,22 @@ yargs.version('1.1.0')
 yargs.command({
     command: 'add',
     describe: 'Add a new note',
-    handler: function () {
-        console.log('Adding a new note...')
+    // Build is an object and on that object, we can define all of the options we want this given command to support
+    builder: {
+        title: {
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string'
+        },
+        body: {
+            describe: 'Note body',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function (argv) {
+        console.log('title: ' + argv.title)
+        console.log('body: ' + argv.body)
     }
 })
 
@@ -42,4 +56,4 @@ yargs.command({
     }
 })
 
-console.log(yargs.argv)
+yargs.parse()
