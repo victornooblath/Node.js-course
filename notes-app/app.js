@@ -1,8 +1,4 @@
-//To use a node module i need to "dump" it inside a const and using require('') function
-const fs = require('fs')
+// Its like importing another file to this actual file, the result is that node execute both of the files
+const getNotes = require('./notes.js')
 
-//Creates a file called notes and add a text content to it
-//fs.writeFileSync('notes.txt', 'this is a test file')
-
-
-fs.appendFileSync('notes.txt','I just appended this')
+console.log(getNotes())
