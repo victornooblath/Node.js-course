@@ -9,6 +9,7 @@
   "author": "victor",
   "license": "ISC",
   "dependencies": {
-    "validator": "^10.8.0"
+    "chalk": "^2.4.1",
+    "validator": "^13.7.0"
   }
 }
