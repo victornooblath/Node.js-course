@@ -1,6 +1,6 @@
 // Its like importing another file to this actual file, the result is that node execute both of the files
 const chalk = require('chalk')
-const getNotes = require('./notes.js')
+const notes = require('./notes.js')
 const yargs = require('yargs')
 
 // Customize yargs version
@@ -26,8 +26,7 @@ yargs.command({
         }
     },
     handler: function (argv) {
-        console.log('title: ' + argv.title)
-        console.log('body: ' + argv.body)
+        notes.addNote(argv.title, argv.body)
     }
 })
 
