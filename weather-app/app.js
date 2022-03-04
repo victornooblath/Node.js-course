@@ -1,10 +1,8 @@
-console.log('Starting')
-// setTimeout allows us to run some code after a specific amount of time has passed and set time out
-setTimeout(() => {
-    console.log('2 second timer')
-}, 2000 )
+const request = require('request')
 
-setTimeout(() => {
-    console.log('0 second timer')
-}, 0 )
-console.log('Stopping')
+const url = 'http://api.weatherstack.com/current?access_key=57c58a1a3501b3b99462df5c62ba7a7d&query=37.8267,-122.4233'
+
+request({ url: url}, (error, response) => {
+    const data = JSON.parse(response.body)
+    console.log(data.current)
+})

@@ -1,0 +1,1 @@
+Ao utilizar o debugger no meio do código, a partir desse statement em diante vai entrar no modo de debugger. para utilizar basta digitar no terminal { node inspect }
